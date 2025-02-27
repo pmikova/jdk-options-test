@@ -27,7 +27,7 @@ echo "Exit code:"
 echo $EXIT_CODE
 
 
-if [ $OTOOL_jresdk != "sdk" ] ; then
+if [[ "$OTOOL_jresdk" != "sdk" || "$OTOOL_jresdk" != "all" ]] ; then
   echo "Expecting javac command to fail. Verifying"
   if [ $EXIT_CODE -eq 0 ]; then
     echo "This should exit as non-zero. Failing test"
